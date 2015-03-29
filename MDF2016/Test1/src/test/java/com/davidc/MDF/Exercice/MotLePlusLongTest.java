@@ -42,22 +42,22 @@ public class MotLePlusLongTest {
     @Test
     public void testCompute() throws Exception {
         System.out.println("compute");
-        String path = "/Users/cuvellierdavid/IT/MDF2016/Test1/src/test/resources/MotLePlusLong/";
-        String in = path+"input1.txt";
-        String out = path+"output1.txt";
+        //String path = "/Users/cuvellierdavid/IT/MDF2016/Test1/src/test/resources/MotLePlusLong/";
+        String in = "MotLePlusLong/input1.txt";
+        String out = "MotLePlusLong/output1.txt";
         MotLePlusLong instance = new MotLePlusLong();
         int expResult = 0;
-        int result = instance.compute(in, out);
+        int result = instance.launchCompute(in, out);
         assertEquals(expResult, result);
 
-        in = path+"input2.txt";
-        out = path+"output2.txt";
-        result = instance.compute(in, out);
+        in = "MotLePlusLong/input2.txt";
+        out = "MotLePlusLong/output2.txt";
+        result = instance.launchCompute(in, out);
         assertEquals(expResult, result);
 
-        in = path+"input3.txt";
-        out = path+"output3.txt";
-        result = instance.compute(in, out);
+        in = "MotLePlusLong/input3.txt";
+        out = "MotLePlusLong/output3.txt";
+        result = instance.launchCompute(in, out);
         assertEquals(expResult, result);
     
     }

@@ -9,10 +9,13 @@ import com.davidc.MDF.Exercice.someobject.InputMatrix;
 import com.davidc.MDF.Exercice.someobject.LineMatrix;
 import com.davidc.MDF.Exercice.someobject.OutPutMatrix;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,10 +26,17 @@ import java.util.List;
  * @author cuvellierdavid
  */
 public class Matrix {
-    public boolean compute(String in,String out) throws FileNotFoundException{
-        InputStream IS,OS;
-        IS = new FileInputStream(in);
-        OS = new FileInputStream(out);
+    public boolean launchCompute (String in,String out) throws FileNotFoundException, URISyntaxException{
+          InputStream IS,OS;
+        URL resourceIN = this.getClass().getClassLoader().getResource(in);
+        URL resourceOUT = this.getClass().getClassLoader().getResource(out);
+        IS = new FileInputStream(new File(resourceIN.toURI()));
+        OS = new FileInputStream(new File(resourceOUT.toURI()));
+        return compute(IS, OS);      
+    }
+    
+    public boolean compute(InputStream IS, InputStream OS) throws FileNotFoundException{
+ 
         InputMatrix inputMatrix = readInputFile(IS);
         OutPutMatrix outputMatrix = readOutputFile(OS);
         inputMatrix.generate();

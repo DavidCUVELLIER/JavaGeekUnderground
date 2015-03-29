@@ -43,23 +43,23 @@ public class CompressionTest {
      */
     @Test
     public void testCompute() throws Exception {
-        String path = "/Users/cuvellierdavid/NetBeansProjects/TestMDF/test/resources/compression/";
+        //String path = "/Users/cuvellierdavid/NetBeansProjects/TestMDF/test/resources/compression/";
 
         System.out.println("compute");
-        String in = path+"input1.txt";
-        String out = path+"output1.txt";
+        String in = "compression/input1.txt";
+        String out = "compression/output1.txt";
         Compression instance = new Compression();
         Boolean expResult = true;
-        Boolean result = instance.compute(in, out);
+        Boolean result = instance.launchCompute(in, out);
         assertEquals(expResult, result);
-        in = path + "input2.txt";
-        out = path + "output2.txt";
-        result = instance.compute(in, out);
+        in = "compression/input2.txt";
+        out = "compression/output2.txt";
+        result = instance.launchCompute(in, out);
         assertEquals(expResult, result);
         
-        in = path + "input3.txt";
-        out = path + "output3.txt";
-        result = instance.compute(in, out);
+        in = "compression/input3.txt";
+        out = "compression/output3.txt";
+        result = instance.launchCompute(in, out);
         assertEquals(expResult, result);
     }
     /**

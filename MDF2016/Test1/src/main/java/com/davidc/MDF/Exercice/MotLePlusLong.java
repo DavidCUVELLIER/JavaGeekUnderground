@@ -8,20 +8,30 @@ package com.davidc.MDF.Exercice;
 import com.davidc.MDF.Exercice.someobject.TextInput;
 import com.davidc.MDF.Exercice.someobject.TextOutput;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 /**
  *
  * @author cuvellierdavid
  */
 public class MotLePlusLong {
-    public int compute(String in, String out) throws FileNotFoundException{
+    
+        public int launchCompute(String in, String out) throws FileNotFoundException, URISyntaxException{
         InputStream IS,OS;
-        IS = new FileInputStream(in);
-        OS = new FileInputStream(out);
+        URL resourceIN = this.getClass().getClassLoader().getResource(in);
+        URL resourceOUT = this.getClass().getClassLoader().getResource(out);
+        IS = new FileInputStream(new File(resourceIN.toURI()));
+        OS = new FileInputStream(new File(resourceOUT.toURI()));
+        return compute(IS, OS);
+    }
+    public int compute(InputStream IS, InputStream OS) throws FileNotFoundException{
+
         TextInput textInput = readInputFile(IS);
         TextOutput textOutput = readOutputFile(OS);
         textInput.generate();

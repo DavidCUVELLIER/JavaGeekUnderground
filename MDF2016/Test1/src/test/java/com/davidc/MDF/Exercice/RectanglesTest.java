@@ -43,23 +43,23 @@ public class RectanglesTest {
     @Test
     public void testCompute() throws Exception {
         System.out.println("compute");
-        String path = "/Users/cuvellierdavid/NetBeansProjects/TestMDF/test/resources/Rectangles/";
-        String in = path+"input1.txt";
-        String out = path+"output1.txt";
+        //String path = "/Users/cuvellierdavid/NetBeansProjects/TestMDF/test/resources/Rectangles/";
+        String in = "Rectangles/input1.txt";
+        String out = "Rectangles/output1.txt";
 
         Rectangles instance = new Rectangles();
         boolean expResult = true;
-        boolean result = instance.compute(in, out);
+        boolean result = instance.launchCompute(in, out);
         assertEquals(expResult, result);
 
-        in = path+"input2.txt";
-        out = path+"output2.txt";
-        result = instance.compute(in, out);
+        in = "Rectangles/input2.txt";
+        out = "Rectangles/output2.txt";
+        result = instance.launchCompute(in, out);
         assertEquals(expResult, result);
 
-        in = path+"input3.txt";
-        out = path+"output3.txt";
-        result = instance.compute(in, out);
+        in = "Rectangles/input3.txt";
+        out = "Rectangles/output3.txt";
+        result = instance.launchCompute(in, out);
         assertEquals(expResult, result);
     
     

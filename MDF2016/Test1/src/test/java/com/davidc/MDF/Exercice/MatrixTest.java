@@ -42,17 +42,17 @@ public class MatrixTest {
      */
     @Test
     public void testCompute() throws Exception {
-        String path = "/Users/cuvellierdavid/NetBeansProjects/TestMDF/test/resources/matrix/";
+        //String path = "/Users/cuvellierdavid/NetBeansProjects/TestMDF/test/resources/matrix/";
         System.out.println("compute");
-        String in = path+"input1.txt";
-        String out = path+"output1.txt";
+        String in = "matrix/input1.txt";
+        String out = "matrix/output1.txt";
          Matrix instance = new Matrix();
         boolean expResult = true;
-        boolean result = instance.compute(in, out);
+        boolean result = instance.launchCompute(in, out);
         assertEquals(expResult, result);
 
-        in = path+"input2.txt";
-        out = path+"output2.txt";
+        in = "matrix/input2.txt";
+        out = "matrix/output2.txt";
 
    //     result = instance.compute(in, out);
         assertEquals(expResult, result);

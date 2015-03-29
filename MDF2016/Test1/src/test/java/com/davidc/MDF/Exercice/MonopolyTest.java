@@ -46,15 +46,15 @@ public class MonopolyTest {
     @Test
     public void testProcess() throws Exception {
         System.out.println("process");
-        String path = "/Users/cuvellierdavid/NetBeansProjects/TestMDF/test/resources/monopoly/";
+        //String path = "/Users/cuvellierdavid/NetBeansProjects/TestMDF/test/resources/monopoly/";
 
         Monopoly instance = new Monopoly();
 
-        Boolean result = instance.process(path+"input1.txt", path+"output1.txt");
+        Boolean result = instance.launchProcess("monopoly/input1.txt", "monopoly/output1.txt");
         assertEquals(true, result);
-        result = instance.process(path+"input2.txt", path+"output2.txt");
+        result = instance.launchProcess("monopoly/input2.txt", "monopoly/output2.txt");
         assertEquals(true, result);
-        result = instance.process(path+"input3.txt", path+"output3.txt");
+        result = instance.launchProcess("monopoly/input3.txt", "monopoly/output3.txt");
         assertEquals(true, result);
     }
 
