@@ -1,0 +1,5 @@
+cinema 15
+musique 12
+sciences 10
+planete 9
+education 8
