@@ -43,7 +43,6 @@ public class RectanglesTest {
     @Test
     public void testCompute() throws Exception {
         System.out.println("compute");
-        //String path = "/Users/cuvellierdavid/NetBeansProjects/TestMDF/test/resources/Rectangles/";
         String in = "Rectangles/input1.txt";
         String out = "Rectangles/output1.txt";
 
