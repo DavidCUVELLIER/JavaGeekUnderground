@@ -42,7 +42,6 @@ public class MotLePlusLongTest {
     @Test
     public void testCompute() throws Exception {
         System.out.println("compute");
-        //String path = "/Users/cuvellierdavid/IT/MDF2016/Test1/src/test/resources/MotLePlusLong/";
         String in = "MotLePlusLong/input1.txt";
         String out = "MotLePlusLong/output1.txt";
         MotLePlusLong instance = new MotLePlusLong();
