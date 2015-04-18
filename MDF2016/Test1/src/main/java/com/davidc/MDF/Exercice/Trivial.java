@@ -6,12 +6,15 @@
 package com.davidc.MDF.Exercice;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,10 +75,12 @@ public class Trivial {
         return result;
     }
        
-    Boolean process(String in,Integer cursor, String out) throws FileNotFoundException{
+    Boolean process(String in,Integer cursor, String out) throws FileNotFoundException, URISyntaxException{
         InputStream IS,OS;
-        IS = new FileInputStream(in);
-        OS = new FileInputStream(out);
+        URL resourceIN = this.getClass().getClassLoader().getResource(in);
+        URL resourceOUT = this.getClass().getClassLoader().getResource(out);
+        IS = new FileInputStream(new File(resourceIN.toURI()));
+        OS = new FileInputStream(new File(resourceOUT.toURI()));
         List<Integer> input = readInputFile(IS);
         Trivial.lesSixCouleurs result = readOutputFile(OS);
         for( Integer laps : input){

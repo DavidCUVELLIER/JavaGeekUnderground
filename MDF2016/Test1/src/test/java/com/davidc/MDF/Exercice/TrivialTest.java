@@ -8,6 +8,7 @@ package com.davidc.MDF.Exercice;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
@@ -56,30 +57,13 @@ public class TrivialTest {
     }
 
     /**
-     * Test of readFile method, of class Trivial.
-     */
-    @Test
-    public void testReadFile() throws FileNotFoundException {
-        System.out.println("readFile");
-        InputStream IS = new FileInputStream( "/Users/cuvellierdavid/IT/Le_Meilleur_Dev_de_France_2014/problems/1_Trivial-Pursuit/input1.txt");
-        Trivial instance = new Trivial();
-        List<Integer> expResult = new ArrayList<>();
-        expResult.add(4);expResult.add(1);expResult.add(5);
-        expResult.add(3);expResult.add(2);expResult.add(2);
-        expResult.add(6);expResult.add(2);expResult.add(1);
-        List<Integer> result = instance.readInputFile(IS);
-        assertEquals(expResult.size(), result.size());
-        // TODO review the generated test code and remove the default call to fail.
-    }
-
-    /**
      * Test of process method, of class Trivial.
      */
     @Test
-    public void testProcess() throws FileNotFoundException {
+    public void testProcess() throws URISyntaxException, FileNotFoundException {
         System.out.println("process");
         Trivial instance = new Trivial();
-        String path = "/Users/cuvellierdavid/NetBeansProjects/TestMDF/test/resources/Trivial/";
+        String path = "trivial/";
         boolean result = instance.process(path + "input1.txt",
                 0,path + "output1.txt");
         assertEquals(true, result);
