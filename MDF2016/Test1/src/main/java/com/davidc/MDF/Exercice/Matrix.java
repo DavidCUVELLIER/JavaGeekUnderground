@@ -76,10 +76,9 @@ public class Matrix {
                             }
                         isFirstLine = false;
                     }else{
-                        if ((currentRaw >= minRaw) && 
-                                (currentRaw <= maxRaw)){
+                        if ((currentRaw >= minRaw) && (currentRaw <= maxRaw)){
                             String[] coordonnees = line.split(" ");
-                            List<Integer> elets = new ArrayList<Integer>();
+                            List<Integer> elets = new ArrayList<>();
                             currentCol = 0;
                             for ( String val : coordonnees){
                                 if ((currentCol >= minCol) &&
